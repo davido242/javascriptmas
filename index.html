@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count Down to Christmass</title>
+  <style>
+    body, * {
+      background-color: #c2002a;
+      color: white;
+      font-size: 1.5rem;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+    #display-counter {
+      font-size: 2rem;
+      font-weight: 700;      
+    }
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+}
+
+/* Apply the '#display-counter' animation to the link */
+.blink {
+  animation: blink 1s infinite;
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  border: 2px solid white;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  padding-top: 5px;  
+}
+
+.circle {
+  background-color: #a0203a;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: 0 auto;
+}
+.underline {
+  text-decoration: underline;
+}
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Major CountDown</h1>
+    <p class="underline">ChristMas is in</p> 
+    <div class="circle">
+      <p class="blink" id="display-counter"></p>
+    </div>
+    <p>Days</p>
+  </div>
+  <script>
+    const display = document.getElementById('display-counter');
+    const today = new Date();
+
+    const christmasDay =  25;
+    const dayOfMonth = today.getDate();
+    display.innerHTML = christmasDay - dayOfMonth;
+
+    
+  </script>
+</body>
+</html>
