@@ -56,27 +56,33 @@
 <body>
   <div>
     <h1>Major CountDown</h1>
-    <p class="underline">ChristMas is in</p> 
+    <p class="underline" id="underline">ChristMas is in</p> 
     <div class="circle">
       <p class="blink" id="display-counter"></p>
     </div>
-    <p>Days</p>
+    <p id="d-none">Days</p>
   </div>
   <script>
     const display = document.getElementById('display-counter');
+    const underline = document.getElementById("underline");
+    const dnone = document.getElementById("d-none");
     const today = new Date();
 
-    const christmasDay =  25;
+    const christmasDay =  5;
     const dayOfMonth = today.getDate();
     display.innerHTML = christmasDay - dayOfMonth;
 
-    if(christmasDay - dayOfMonth == 2) {
+    if(christmasDay - dayOfMonth === 2) {
       alert("Merry Christmas in 2days advance Fam!!");
-    }else if(christmasDay - dayOfMonth == 0) {
+    }else if(christmasDay - dayOfMonth === 0) {
       alert("Merry Christmas Daveed!!");
+      underline.innerHTML = "Merry Christmas Fam!!";
+      display.innerHTML = "25"
+      dnone.innerHTML = "Today is the birthday of Our Lord Jesus"
+    }else if(christmasDay - dayOfMonth < 0) {
+      alert("Waiting for 2024's Christmas Day!");
     }
 
-    
   </script>
 </body>
 </html>
